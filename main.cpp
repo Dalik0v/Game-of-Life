@@ -23,12 +23,31 @@ int main() {
         sf:Work work;
     
        while(window.pollWork(work)){
-        switch (work.type){
-            
+        switch (work.type) {
+            case sf:Work::KeyPresed:
+            if (work.key.code == sf::Keyboard::P) {
+                is_work = !is_work;
+            } 
+            default:
+                break; 
         }
-       
-       
        }
+       //chistim okno
+       window.clear()
+       //zapisivaem
+     
+       float update_delta = 0.8;
+       if (is_work && clock.getElapsedTime().asMicroseconds() >= update_delta) {
+        window,setTitle(std::to_string(++iteration));
+        gol.update()
+        clock.restart();
+       }
+       //obnova okno
+       window.display()
     
+
+
+
+
     }
 }
