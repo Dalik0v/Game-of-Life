@@ -3,7 +3,6 @@
 #include <time.h>
 #include <chrono>   // Для использования std::this_thread::sleep_for
 #include <thread>   // Для использования std::this_thread::sleep_for
-
 #define ROWS 10
 #define COLS 10
 
